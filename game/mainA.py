@@ -55,11 +55,39 @@ def ifWin(x,y,mark):
 	if testing in sentance:
 		return True
 
+		maxX = len(fivePointQipan.qipan)
+		maxY = len(fivePointQipan.qipan[0])
 	if fivePointQipan.qipan[x+1][y+1] == mark or fivePointQipan.qipan[x-1][y-1] == mark:
 
 
+		previousX = x-1
+		previousY = y-1
+		targetStr = ''
+		while (previousY >=0) | (previousX>=0):
+			targetStr = targetStr + fivePointQipan.qipan[previousX][previousY]
+			previousX -=1
+			previousY -=1
+		targetStr = targetStr[::-1] + fivePointQipan.qipan[x][y]
+		nextx = x+1
+		nexty = y+1
+		maxX = len(fivePointQipan.qipan)
+		maxY = len(fivePointQipan.qipan[0])
 
+		while (nextx < maxX )|(nexty<maxY):
+			targetStr = targetStr + fivePointQipan.qipan[nextx][nexty]
+			nextx += 1
+			nexty += 1
+		if testing in targetStr:
+			retuen True
 
+	if fivePointQipan.qipan[x+1][y-1] == mark | fivePointQipan.qipan[x-1][y+1]==mark:
+		previousX = x+1
+		previousY = y-1
+		targetStr = ''
+		while (previousX < maxX)|(previousY >= 0):
+			
+			
+			
 
 
 
